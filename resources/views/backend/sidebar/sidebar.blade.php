@@ -57,7 +57,7 @@
 <div>
     
     <div class="py-4 px-5 hidden lg:block">
-        @if(Auth::user()->emp_type == 'superadmin')
+        {{-- @if(Auth::user()->emp_type == 'superadmin') --}}
         <button  class="bg-[#F8B200] w-full py-2 cursor-pointer rounded-md open-file">
             <div class="w-full h-full flex  justify-center items-center gap-2">
                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
@@ -68,8 +68,8 @@
                 <a class="font-solaimans text-14 text-white font-medium leading-normal">{{ __('messages.New') }}</a>
             </div>
         </button>
-
-        @endif
+{{-- 
+        @endif --}}
     </div>
 </div>
 

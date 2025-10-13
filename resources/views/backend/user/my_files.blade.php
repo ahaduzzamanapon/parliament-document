@@ -8,7 +8,6 @@
 </div>
      
 <div class="w-full py-3  px-5 lg:ps-8 lg:pe-10">
- 
     <div class="py-2 w-full border border-[#E3F0FF] bg-white shadow-md ps-[1.125em] mt-2">
         @if (!empty($vipRecentFolders))
         <div class="mt-3 pe-6" style="min-height: 200px;">

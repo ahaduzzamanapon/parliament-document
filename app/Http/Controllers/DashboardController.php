@@ -544,7 +544,7 @@ class DashboardController extends Controller
         //dd(Auth::user());
         $data['user'] = Auth::user();
          $user_id = Auth::user()->id;
-        $data['vipRecentFolders'] = Category::where(['department_id' => 'soff', 'folder_type' => 'personal'])->take(8)->get();
+        $data['vipRecentFolders'] = Category::where(['user_id' => $user_id, 'folder_type' => 'personal'])->get();
 
         $data['sharedFiles'] = ShareDoc::where('user_id', $user_id)->get();
         

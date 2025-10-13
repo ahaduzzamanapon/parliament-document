@@ -529,10 +529,12 @@
                         <div class="max-h-[350px] overflow-y-auto p">
                             <div class="w-full pt-5 space-y-4" id="recent_event_append">
                                 @foreach($recent_events as $i => $event)
-                                <div data-id="{{ $event->category->parent_category_id }}" data-own="1" data-name="{{ $event->event_name}}" data-type="folder" onClick="fetch_data('{{ $event->category->parent_category_id}}')" class="cursor-pointer flex items-center gap-3">
-                                    <span class="text-16 font-solaimans font-medium">{{$i + 1}}.</span>
-                                    <h1 class="text-16 font-solaimans font-medium">{{ $event->event_name}}</h1>
-                                </div>
+                                    @if(isset($event->category->parent_category_id))
+                                        <div data-id="{{ $event->category->parent_category_id }}" data-own="1" data-name="{{ $event->event_name}}" data-type="folder" onClick="fetch_data('{{ $event->category->parent_category_id}}')" class="cursor-pointer flex items-center gap-3">
+                                            <span class="text-16 font-solaimans font-medium">{{$i + 1}}.</span>
+                                            <h1 class="text-16 font-solaimans font-medium">{{ $event->event_name}}</h1>
+                                        </div>
+                                    @endif
                                 @endforeach
                             </div>
                             <div id="recent_event_more" class="mt-5 flex items-center justify-center">

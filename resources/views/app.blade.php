@@ -74,7 +74,7 @@
         <div class="mt-3 pe-6">
 
             <div class="lg:flex justify-between items-center md:flex ">
-                <h3 class="font-solaimans text-20 leading-5 bg-[#b1afaf] px-2 py-1"> {{__('messages.Uploaded Folders') }}</h3>
+                <h3 class="font-solaimans text-20 leading-5 bg-[#b1afaf] px-2 py-1"> {{__('messages.Uploaded Folders') }}tryerty</h3>
                 @if(Auth::user()->dept_role != 'gen_user' && Auth::user()->emp_type != 'superadmin')
                 <button @if(Auth::user()->emp_type == 'vip_official') onclick="vipOfficial_upload()" @elseif(Auth::user()->emp_type == 'sochebaloy_official') onclick="chckprmitionh_folder2()" @else onclick="fileUpNotPermns()" @endif class="bg-[#F8B200] mt-2 md:mt-0 w-full md:w-[20%] py-2 rounded-md openfile" id="vipOfficial_upload">
                     <div class="wull h-full flex px-2  justify-center items-center gap-2">

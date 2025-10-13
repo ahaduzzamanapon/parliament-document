@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nameEn');
             $table->string('nameBn');
             $table->string('username');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('phone');
             $table->string('empId');
             $table->json('designationInfos');
