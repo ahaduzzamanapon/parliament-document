@@ -77,6 +77,9 @@ class FileController extends Controller
         $document->file_size = $fileSizeInBytes;
         $document->category_id = $category_id;
         $document->user_id = $user_id;
+        if($request->has('status')){
+            $document->status = $request->status;
+        }
         $document->save();
         $insertId = $document->id;
 
@@ -281,12 +284,11 @@ class FileController extends Controller
         if(isset($event_type)){
             $document = $document->where('event_type', $event_type);
         }
-        if(isset($event_date)){
-            $document = $document->whereDate('event_date', $event_date);
-        }
-        
-        if(isset($searchType)){
-            $document = $document->where('status', $searchType);
+if(isset($searchType)){
+            $document = $document->where(function($query) use ($searchType) {
+                $query->where('status', $searchType)
+                      ->orWhere('status', 'personal');
+            });
         }
         
         //if(!isset($is_search)){

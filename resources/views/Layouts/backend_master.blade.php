@@ -2735,12 +2735,14 @@
                     var formData = new FormData();
                     formData.append('file', file);
 
-                    if (location.endsWith("user")) {
-                        formData.append('category_id_file', 1);
-                    } else {
-                        formData.append('category_id_file', $('#category_id_file').val());
-                    }
-
+                    if (is_personal_upload) {
+                                    formData.append('status', 'personal');
+                                }
+                                if (location.endsWith("user")) {
+                                    formData.append('category_id_file', 1);
+                                } else {
+                                    formData.append('category_id_file', $('#category_id_file').val());
+                                }
                     var name = $(
                         `<span style="text-align: left;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;height: 20px;width: 90%;">${file.name}</span>`
                     );
@@ -3484,6 +3486,18 @@
 
     
         @yield('scripts')
+<script>var is_personal_upload = false;</script>
+
+    <script>
+        $('#personal_file_upload_btn').click(function() {
+            is_personal_upload = true;
+            $('#fileInput').click();
+        });
+
+        // $('#fileInput').change(function() {
+        //     upload_file();
+        // });
+    </script>
 
 @if(request()->is('search/files'))
     <script>

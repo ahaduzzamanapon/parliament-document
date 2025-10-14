@@ -136,7 +136,10 @@
                 </a>
   
             @elseif(Auth::user()->emp_type == 'general')
-                <a href="{{ url('/user') }}">
+                @php 
+                    $userStatus = 'general';
+                @endphp
+                <a href="{{ route('officePersonalFiles', ['status' => $userStatus, 'files' => 'personal-files']) }}">
                     <li class="cursor-pointer sbmenu flex items-center justify-between gap-2 border border-[#E5F1FF] ps-3 py-3 pe-3 {{ request()->is('user')?  'sbmenuactive' : '' }}">
                             <button class="flex items-center gap-2">
                                 <span>
@@ -148,7 +151,7 @@
                     </li>
                 </a>
        
-                @elseif(Auth::user()->emp_type == 'superadmin')
+            @elseif(Auth::user()->emp_type == 'superadmin')
 
 
 

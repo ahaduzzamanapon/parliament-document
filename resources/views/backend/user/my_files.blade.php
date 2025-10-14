@@ -6,6 +6,41 @@
             class="text-[#004407] font-solaimans italic font-light leading-none">{{ __('messages.Admin') }}!</span> </h1>
     <p class="font-solaimans text-15 text-black leading-4">{{ __('messages.Dashboard') }}</h1></p>
 </div>
+<div class="py-4 px-5 lg:flex lg:gap-4">
+        {{-- <button  class="bg-[#F8B200] w-full lg:w-1/2 py-2 cursor-pointer rounded-md" onclick="document.getElementById('vipOfficial_upload_modal').showModal();">
+            <div class="w-full h-full flex  justify-center items-center gap-2">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+                    <path
+                        d="M11.5625 15H8.4375C7.91797 15 7.5 14.582 7.5 14.0625V7.5H4.07422C3.37891 7.5 3.03125 6.66016 3.52344 6.16797L9.46484 0.222656C9.75781 -0.0703125 10.2383 -0.0703125 10.5312 0.222656L16.4766 6.16797C16.9688 6.66016 16.6211 7.5 15.9258 7.5H12.5V14.0625C12.5 14.582 12.082 15 11.5625 15ZM20 14.6875V19.0625C20 19.582 19.582 20 19.0625 20H0.9375C0.417969 20 0 19.582 0 19.0625V14.6875C0 14.168 0.417969 13.75 0.9375 13.75H6.25V14.0625C6.25 15.2695 7.23047 16.25 8.4375 16.25H11.5625C12.7695 16.25 13.75 15.2695 13.75 14.0625V13.75H19.0625C19.582 13.75 20 14.168 20 14.6875ZM15.1562 18.125C15.1562 17.6953 14.8047 17.3437 14.375 17.3437C13.9453 17.3437 13.5938 17.6953 13.5938 18.125C13.5938 18.5547 13.9453 18.9062 14.375 18.9062C14.8047 18.9062 15.1562 18.5547 15.1562 18.125ZM17.6562 18.125C17.6562 17.6953 17.3047 17.3437 16.875 17.3437C16.4453 17.3437 16.0938 17.6953 16.0938 18.125C16.0938 18.5547 16.4453 18.9062 16.875 18.9062C17.3047 18.9062 17.6562 18.5547 17.6562 18.125Z"
+                        fill="white" />
+                </svg>
+                <a class="font-solaimans text-14 text-white font-medium leading-normal">VIP File Upload</a>
+            </div>
+        </button> --}}
+        {{-- <button  id="personal_file_upload_btn" class="bg-[#007A43] w-full lg:w-1/2 py-2 cursor-pointer rounded-md">
+            <div class="w-full h-full flex  justify-center items-center gap-2">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
+                    <path
+                        d="M11.5625 15H8.4375C7.91797 15 7.5 14.582 7.5 14.0625V7.5H4.07422C3.37891 7.5 3.03125 6.66016 3.52344 6.16797L9.46484 0.222656C9.75781 -0.0703125 10.2383 -0.0703125 10.5312 0.222656L16.4766 6.16797C16.9688 6.66016 16.6211 7.5 15.9258 7.5H12.5V14.0625C12.5 14.582 12.082 15 11.5625 15ZM20 14.6875V19.0625C20 19.582 19.582 20 19.0625 20H0.9375C0.417969 20 0 19.582 0 19.0625V14.6875C0 14.168 0.417969 13.75 0.9375 13.75H6.25V14.0625C6.25 15.2695 7.23047 16.25 8.4375 16.25H11.5625C12.7695 16.25 13.75 15.2695 13.75 14.0625V13.75H19.0625C19.582 13.75 20 14.168 20 14.6875ZM15.1562 18.125C15.1562 17.6953 14.8047 17.3437 14.375 17.3437C13.9453 17.3437 13.5938 17.6953 13.5938 18.125C13.5938 18.5547 13.9453 18.9062 14.375 18.9062C14.8047 18.9062 15.1562 18.5547 15.1562 18.125ZM17.6562 18.125C17.6562 17.6953 17.3047 17.3437 16.875 17.3437C16.4453 17.3437 16.0938 17.6953 16.0938 18.125C16.0938 18.5547 16.4453 18.9062 16.875 18.9062C17.3047 18.9062 17.6562 18.5547 17.6562 18.125Z"
+                        fill="white" />
+                </svg>
+                <a class="font-solaimans text-14 text-white font-medium leading-normal">Personal File Upload</a>
+            </div>
+        </button> --}}
+    </div>
+<div class="w-full hidden">
+            <div class="drop-zone">
+                <div>
+                    <form id="file_upload" enctype="multipart/form-data">
+                        @csrf
+                        <span class="drop-zone__prompt">Drop your files here or browse for files</span>
+                        <input type="file" id="fileInput" name="myFile" class="drop-zone__input" multiple />
+                        <input type="hidden" name="category_id" id="category_id_file" value="">
+                        <input type="hidden" name="status" value="personal">
+                    </form>
+                </div>
+            </div>
+        </div>
      
 <div class="w-full py-3  px-5 lg:ps-8 lg:pe-10">
     <div class="py-2 w-full border border-[#E3F0FF] bg-white shadow-md ps-[1.125em] mt-2">
